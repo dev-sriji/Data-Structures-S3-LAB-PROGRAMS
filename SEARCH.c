@@ -2,6 +2,8 @@
  * a. Linear search on N numbers
  * b. Binary search on N numbers - Iterative
  * c. Binary search on N numbers - Recursive
+
+ * COMPILE AND RUN : ```gcc SEARCH.c -o Search && ./Search```
 */
 
 #include <stdio.h>
