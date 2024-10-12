@@ -3,7 +3,7 @@
  * b. Binary search on N numbers - Iterative
  * c. Binary search on N numbers - Recursive
 
- * COMPILE AND RUN : ```gcc SEARCH.c -o Search && ./Search```
+ * COMPILE AND RUN : ```gcc SEARCH.c -o Search.out && ./Search.out```
 */
 
 #include <stdio.h>
