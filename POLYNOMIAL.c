@@ -1,6 +1,8 @@
 /**
   * Question
   * Write a program to read two polynomials and store them in an array. Calculate the sum of the two polynomials and display the first, second and the resultant polynomial.
+  * 
+  * Compile and Run Command : clear && gcc POLYNOMIAL.c -o POLYNOMIAL.out && ./POLYNOMIAL.out
 **/
 
 #include <stdio.h>
