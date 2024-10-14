@@ -4,7 +4,7 @@
   *     i. Insert at the beginning         ii. insert at the end        iii. insert in sorted order
   *     iv. Count the number of nodes      v. reverse the linked list   vi. delete from beginning
   *     vii. Delete from end               viii. display the linked list
-  * Compile and Run Command : clear && gcc DoubleeLinkedList.c -o DoubleeLinkedList.out && ./DoubleeLinkedList.out
+  * Compile and Run Command : clear && gcc DoublyLinkedList.c -o DoublyLinkedList.out && ./DoublyLinkedList.out
 **/
 #include<stdio.h>
 #include<stdlib.h>
