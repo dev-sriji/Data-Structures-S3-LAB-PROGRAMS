@@ -29,7 +29,26 @@ void DisplayDLL(struct Node* head){
     printf("\n");
 }
 
-int InsertAtBeginning(struct Node* head, int data){
+int CountNodes(struct Node* head){
+    struct Node* p = head;
+    int count=0;
+    while(p->rlink != NULL){
+        p = p->rlink;
+        count++;
+    }
+    return count;
+}
+
+void FreeMemmory(struct Node* head){
+    struct Node* p = head;
+    while(p != NULL){
+        struct Node* ptr = p;
+        p = p->rlink;
+        free(ptr);
+    }
+}
+
+void InsertAtBeginning(struct Node* head, int data){
     struct Node* temp = (struct Node*) malloc(sizeof(struct Node));
     temp->data = data;
     temp->rlink = head->rlink;
@@ -108,10 +127,15 @@ void main(){
             scanf("%d",&data);
             InsertSorted(head,data);
             break;
+            case 4:
+            int count = CountNodes(head);
+            printf("The number of nodes is : %d\n",count);
+            break;
             case 8:
             DisplayDLL(head);
             break;
             case 9:
+            FreeMemmory(head);
             printf("Exiting...");
             isExit = 1;
             break;
