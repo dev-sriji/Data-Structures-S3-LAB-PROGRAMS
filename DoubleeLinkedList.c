@@ -41,22 +41,40 @@ int InsertAtBeginning(struct Node* head, int data){
 }
 
 void InsertAtEnd(struct Node* head,int data){
-    struct Node* p = head->rlink;
+    struct Node* p = head;
     struct Node* temp = (struct Node*) malloc(sizeof(struct Node));
-    while(p!=NULL){
+    while(p->rlink!=NULL && p!=NULL){
         p=p->rlink;
     }
-    temp->rlink = p->rlink;
     temp->data = data;
+    temp->rlink = NULL;
     temp->llink = p;
     p->rlink = temp;
 }
 
 void InsertSorted(struct Node* head, int data) {
-    struct Node* temp = (struct Node*) malloc(sizeof(struct Node));
-    temp->data = data;
     struct Node* p = head->rlink;
-    //pending work
+    if(p==NULL) {
+        InsertAtBeginning(head,data);
+        return;
+    }
+    while(p->rlink != NULL && p->data < data){
+        p=p->rlink;
+    }
+    if(p->rlink==NULL) {
+        InsertAtEnd(head, data);
+        return;
+    } else {
+        struct Node* temp = (struct Node*) malloc(sizeof(struct Node));
+        if(temp == NULL)
+            printf("Error During MALLOC");
+        temp->data = data;
+        temp->rlink = p;
+        if(p->llink != NULL)
+            (p->llink)->rlink = temp;
+        temp->llink = p->llink;
+        p->llink = temp;
+    }
 }
 
 
